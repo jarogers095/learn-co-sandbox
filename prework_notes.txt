@@ -1,0 +1,219 @@
+OPERATORS==================================================
++ - * / % = ==  - Same as all languages
+#               - Comment
+#{foo}          - String interpolation
+<<              - Shovel: Add items to the end of an array
+!               - Bang: Causes method to 
+a
+
+
+PRINTING TO CONSOLE========================================
+
+puts "words"
+Writes to the console, inserts a newline and returns nil
+
+print "words"
+Writes to the console, returns nil
+
+p "words"
+Writes to the console, returns given string in raw form
+
+
+IF STATEMENTS==============================================
+
+if foo
+  puts "code"
+elseif bar
+  puts "other code"
+else derf
+  puts "derf"
+end
+
+----------------------------------------------
+
+puts "code" if foo == true
+
+----------------------------------------------
+
+puts "code" unless foo == false
+
+
+CASE STATEMENT=============================================
+
+case foo
+  when "a"
+    puts "This is a"
+  when "b"
+    puts "This is b"
+  when "c"
+    puts "This is c"
+  else
+    puts "This is anything else"
+end
+
+
+WHILE STATEMENT=============================================
+
+count = 0
+while count < 3 do
+  puts "Doing stuff"
+  count++
+end
+
+----------------------------------------------
+
+3.times do
+  puts "Doing this three times"
+end
+
+----------------------------------------------
+
+count = 0
+loop do 
+  break if count > 2
+  puts "Doing this three times"
+  count++
+end
+
+----------------------------------------------
+
+counter = 0
+until counter == 3
+  puts "Doing this three times"
+  counter++
+end
+
+
+METHOD DECLARATION===========================================
+
+def name_of_method(parameter = "default value")
+  puts parameter
+end
+
+----------------------------------------------
+
+name_of_method(argument)
+
+
+SCOPE=========================================================
+
+Global variable names start with a dollar sign ($). 
+For example: $global_variable or $GLOBAL_VARIABLE.
+
+
+ARRAY=========================================================
+
+the_beatles = [ "John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"]
+
+----------------------------------------------
+
+the_beatles[2] #=> "George Harrison"
+
+----------------------------------------------
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+ 
+famous_cats << "nala cat"
+ 
+p famous_cats
+#=> ["lil' bub", "grumpy cat", "Maru", "nala cat"]
+
+----------------------------------------------
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+ 
+famous_cats.push("nala cat")
+ 
+p famous_cats
+#=> ["lil' bub", "grumpy cat", "Maru", "nala cat"]
+
+----------------------------------------------
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+ 
+famous_cats.unshift("nala cat")
+ 
+p famous_cats
+#=> ["nala cat", "lil' bub", "grumpy cat", "Maru"]
+
+----------------------------------------------
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+maru_cat = famous_cats.pop
+ 
+p famous_cats
+#=> ["lil' bub", "grumpy cat"]
+p maru_cat
+#=> Maru
+
+----------------------------------------------
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+lil_bub = famous_cats.shift
+ 
+p famous_cats
+#=> ["grumpy cat", "Maru"]
+p lil_bub
+#=> lil' bub
+
+----------------------------------------------
+
+famous_cats = ["Cheshire Cat", "Puss in Boots", "Garfield"]
+ 
+famous_cats.index("Puss in Boots")
+#=> 1
+ 
+famous_cats.index("Maru")
+#=> nil
+
+----------------------------------------------
+
+array.sort()
+array.reverse()
+array.first()
+array.last()
+array.include?("Foo") #=> True
+array.size()
+array.length()
+
+
+HASH===========================================================
+
+english_bands_by_city = {
+ :liverpool  => "The Beatles",
+ :manchester => "The Smiths",
+ :coventry   => "Delia Derbyshire and the BBC Radiophonic Band",
+ :london     => "Ziggy Stardust and the Spiders from Mars"
+}
+
+----------------------------------------------
+
+english_bands_by_city[:liverpool] #=> "The Beatles"
+
+----------------------------------------------
+
+english_music_by_city = {
+  :manchester => 
+  [
+    {
+      :band_name => "The Smiths",
+      :member_names => ["Morrissey", "Johnny", "Andy", "Mike"]
+    },
+    {
+      :band_name => "Joy Division",
+      :member_names => ["Peter", "Stephen", "Bernard", "Ian"]
+    },
+  ]
+}
+
+----------------------------------------------
+
+english_music_by_city[:manchester][0][:band_name] #=> "The Smiths"
+
+----------------------------------------------
+
+puts "There were 
+#{english_music_by_city[:manchester][0][:member_names].length} 
+members in 
+#{english_music_by_city[:manchester][0][:band_name]}"
+#=> "There were 4 members in The Smiths"
